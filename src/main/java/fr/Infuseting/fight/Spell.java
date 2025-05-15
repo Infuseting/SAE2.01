@@ -1,6 +1,11 @@
 package fr.Infuseting.fight;
 
 import fr.Infuseting.entity.*;
+/**
+ * Represents a spell that can be cast by the player or the monster.
+ * Provides methods to apply the spell to an entity and to get the spell's name, duration, cost and amount.
+ * @author Achille
+ */
 public abstract class Spell {
     protected int duration;
     protected int nbTurnLeft;

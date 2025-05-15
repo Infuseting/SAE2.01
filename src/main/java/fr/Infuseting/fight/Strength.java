@@ -5,6 +5,7 @@ import fr.Infuseting.entity.Player;
 
 /**
  * Represents a spell that is used by the player to increase their attack power.
+ * @author Achille
  */
 public class Strength extends Spell{
 

@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * Represents a JSON object that stores key-value pairs.
  * Provides methods to add, retrieve, and manipulate data with type safety.
+ * @author Arthur
  */
 public class JSONObject {
 

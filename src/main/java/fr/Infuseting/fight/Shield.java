@@ -4,6 +4,7 @@ import fr.Infuseting.entity.Entity;
 
 /**
  * Represents a spell that is used by the player to increase their armor stat.
+ * @author Achille
  */
 public class Shield extends Spell{
     public Shield(){

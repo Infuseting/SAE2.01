@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * extends the Entity class
  * Represents a player with a maximum Mana pool, a current mana level in addition to his Entity stats.
+ * @author Antoine
  */
 public class Player extends Entity{
     public int currentMana;

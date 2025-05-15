@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Represents a Place in a World.
  * A World can have multiple Places but a Place can only have one World.
+ * @author Mattheo
  */
 public class Place {
     private int id;

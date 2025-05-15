@@ -20,6 +20,9 @@ import java.util.Scanner;
 /**
  * Main class for the game logic.
  * Handles the game flow, player actions, and interactions with the world.
+ *
+ * @author Antoine et Arthur
+ *
  */
 public class Game {
     /**
@@ -27,6 +30,7 @@ public class Game {
      * Starts the game by calling the play method.
      *
      * @param args Command-line arguments (not used).
+     *
      */
     public static void main(String[] args) {
         play();

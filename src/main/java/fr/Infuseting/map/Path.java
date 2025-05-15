@@ -1,5 +1,9 @@
 package fr.Infuseting.map;
 
+/**
+ * Class representing a path between two places
+ * @author Mattheo
+ */
 public class Path {
     public Place firstPlace;
     public Place secondPlace;

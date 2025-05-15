@@ -7,6 +7,7 @@ import fr.Infuseting.entity.Player;
 /**
  * Represents a fight between the player and monster that get stored into that class.
  * Provides methods to simulate a turn-by-turn type fight between the player and the monster where the player strikes first
+ * @author Achille
  */
 public class Fight {
     private final Player player;

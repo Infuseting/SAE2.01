@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Represents a file that manages the saving and the loading of Worlds from a json file
+ * @author Arthur
  */
 public class WorldIO {
 

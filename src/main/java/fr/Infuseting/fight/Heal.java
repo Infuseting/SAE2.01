@@ -5,6 +5,7 @@ import fr.Infuseting.entity.Player;
 
 /**
  * Represents a healing spell that is used to increase the current number of the player's HP.
+ * @author Achille
  */
 public class Heal extends Spell{
 

@@ -5,6 +5,7 @@ import fr.Infuseting.util.JSONObject;
 /**
  * extends the Entity class
  * Represents a monster with a name and its Entity stats
+ * @author Antoine
  */
 public class Monster extends Entity {
     public String name;

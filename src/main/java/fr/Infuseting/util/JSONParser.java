@@ -3,6 +3,7 @@ package fr.Infuseting.util;
 /**
  * A parser for JSON strings that converts them into {@link JSONObject} or {@link JSONArray}.
  * Supports parsing of strings, numbers, booleans, nulls, objects, and arrays.
+ * @author Arthur
  */
 public class JSONParser {
     private String toParse;

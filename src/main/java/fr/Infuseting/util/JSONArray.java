@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Represents a JSON array that can store various types of objects.
  * Provides methods to add elements and retrieve them with type safety.
+ * @author Arthur
  */
 public class JSONArray {
 

@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Represents an Entity that has a specified HP, max HP, armor, attack and a list of effects.
  * Provides methods to attack other Entities and other methods that say if an entity has died or is still alive.
+ * @author Antoine
  */
 public abstract class Entity {
     protected int currentHP;

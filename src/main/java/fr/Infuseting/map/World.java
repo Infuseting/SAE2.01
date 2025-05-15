@@ -11,6 +11,7 @@ import java.util.ArrayList;
 /**
  * Represents the universe where the story takes place
  * Provides methods to create
+ * @author Mattheo
  */
 public class World {
 

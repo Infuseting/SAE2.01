@@ -4,6 +4,7 @@ import fr.Infuseting.entity.Entity;
 
 /**
  * Represents a spell that is used by the player to inflict on a monster the poison effect.
+ * @author Achille
  */
 public class Poison extends Spell{
     public Poison(){

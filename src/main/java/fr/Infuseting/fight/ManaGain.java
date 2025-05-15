@@ -5,6 +5,7 @@ import fr.Infuseting.entity.Player;
 
 /**
  * Represents a spell that increases the player's current amount of mana.
+ * @author Achille
  */
 public class ManaGain extends Spell{
     public ManaGain(){
