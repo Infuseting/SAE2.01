@@ -1,5 +1,9 @@
 package fr.Infuseting.entity;
 
+import fr.Infuseting.fight.Spell;
+
+import java.util.List;
+
 public class Player extends Entity{
     public int currentMana;
     public int maximumMana;

@@ -1,5 +1,9 @@
 package fr.Infuseting.entity;
 
+import fr.Infuseting.fight.Spell;
+
+import java.util.List;
+
 public abstract class Entity {
     protected int currentHP;
     protected int maximumHP;
