@@ -98,7 +98,7 @@ public class Place implements List<Place> {
     public List<Place> getAdjacentsPlace() {
         if (world != null) {
             try {
-                return world.getPlaceIfAdjacent(this,this);
+                return world.getPlaceIfAdjacent(this, this);
             } catch (EstPasAdjacent e) {
                 throw new RuntimeException(e);
             }
@@ -174,19 +174,6 @@ public class Place implements List<Place> {
     @Override
     public void clear() {
 
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Place)) return false;
-        Place other = (Place) obj;
-        return this.id == other.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(id);
     }
 
     @Override
