@@ -15,7 +15,11 @@ public class JSONParser {
      * @param toParse the JSON string to parse
      */
     public JSONParser(String toParse) {
-        this.toParse = toParse.replaceAll("\\s+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", "");
+        //\\s+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)
+        this.toParse =  toParse.replaceAll(
+                "(?<!\")\\s+(?![^\\\"]*\"(?:[^\\\"]*\"[^\\\"]*\")*[^\\\"]*$)",
+                ""
+        );
         this.position = 0;
     }
 

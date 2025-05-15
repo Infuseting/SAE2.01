@@ -1,6 +1,7 @@
 package fr.Infuseting.util;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 /**
  * Represents a JSON array that can store various types of objects.
@@ -106,5 +107,29 @@ public class JSONArray {
             throw new ClassCastException("Value is not a JSONObject: " + value);
         }
         return (JSONObject) value;
+    }
+
+    public List<Object> getData() {
+        return data;
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (Object value : data) {
+            if (value instanceof String) {
+                sb.append("\"").append(value).append("\"");
+            } else if (value instanceof JSONObject || value instanceof JSONArray) {
+                sb.append(value.toString());
+            } else {
+                sb.append(value);
+            }
+            sb.append(",");
+        }
+        if (sb.length() > 1) {
+            sb.deleteCharAt(sb.length() - 1); // Remove the last comma
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }

@@ -108,4 +108,33 @@ public class JSONObject {
         }
         return (JSONObject) value;
     }
+
+
+    /**
+     * Returns a string representation of the JSON object.
+     *
+     * @return the JSON object as a string
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        for (String key : data.keySet()) {
+            sb.append("\"").append(key).append("\":");
+            Object value = data.get(key);
+            if (value instanceof String) {
+                sb.append("\"").append(value).append("\"");
+            } else if (value instanceof JSONObject || value instanceof JSONArray) {
+                sb.append(value.toString());
+            } else {
+                sb.append(value);
+            }
+            sb.append(",");
+        }
+        if (sb.length() > 1) {
+            sb.deleteCharAt(sb.length() - 1); // Remove the last comma
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 }

@@ -1,5 +1,8 @@
 package fr.Infuseting.map;
 
+import fr.Infuseting.entity.Monster;
+import fr.Infuseting.util.JSONArray;
+import fr.Infuseting.util.JSONObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -18,6 +21,80 @@ public class world {
         return name;
     }
 
+    public void setString(String name) {
+        this.name = name;
+    }
+    public List<Place> getAdjacentsPlace(Place place) {
+        if (!cache.containsKey(place)) return new ArrayList<>();
+        return new ArrayList<>(cache.get(place).values());
+    }
+    public String toJson() {
+        JSONObject json = new JSONObject();
+        json.put("world", name);
+        json.put("places", new JSONArray());
+        for (Place place : cache.keySet()) {
+            JSONObject placeJson = new JSONObject();
+            placeJson.put("id", place.getId());
+            placeJson.put("name", place.getName());
+            placeJson.put("description", place.getDescription());
+            placeJson.put("end", place.isEnd());
+            placeJson.put("start", place.isStart());
+            placeJson.put("defeat", place.isDefeat());
+            placeJson.put("monster", place.getMonster() != null ? place.getMonster().toString() : null);
+            json.getJSONArray("places").add(placeJson);
+        }
+        json.put("paths", new JSONArray());
+        for (Place place : cache.keySet()) {
+            for (Path path : cache.get(place).keySet()) {
+                JSONObject pathJson = new JSONObject();
+                pathJson.put("firstPlace", place.getId());
+                pathJson.put("secondPlace", cache.get(place).get(path).getId());
+                pathJson.put("length", path.length);
+                json.getJSONArray("paths").add(pathJson);
+            }
+        }
+        return json.toString();
+
+    }
+
+    public static world loadJson(JSONObject json) {
+        world newWorld = new world(json.getString("world"));
+        JSONArray placesJson = json.getJSONArray("places");
+
+        for (Object placeObject : placesJson.getData()) {
+            JSONObject placeJson = (JSONObject) placeObject;
+            Monster monster;
+            try {
+                monster = Monster.createMonsterFromJSON(placeJson.getJSONObject("monster"));
+            } catch (ClassCastException e) {
+                monster = null;
+            }
+            Place place = new Place(
+                    (Integer) placeJson.getNumber("id"),
+                    placeJson.getString("name"),
+                    monster,
+                    placeJson.getString("description"),
+                    placeJson.getBoolean("end"),
+                    placeJson.getBoolean("start"),
+                    placeJson.getBoolean("defeat")
+            );
+            newWorld.addPlace(place);
+        }
+
+        JSONArray pathsJson = json.getJSONArray("paths");
+        for (Object pathObject : pathsJson.getData()) {
+            JSONObject pathJson = (JSONObject) pathObject;
+            Place firstPlace = newWorld.getPlaceFromId((Integer) pathJson.getNumber("firstPlace"));
+            Place secondPlace = newWorld.getPlaceFromId((Integer) pathJson.getNumber("secondPlace"));
+            Path path = new Path(firstPlace, secondPlace, (Integer) pathJson.getNumber("distance"));
+            try {
+                newWorld.addPath(path);
+            } catch (UnKnownPlaceException e) {
+                e.printStackTrace();
+            }
+        }
+        return newWorld;
+    }
     public void addPlace(Place place) {
         if (!cache.containsKey(place)) {
             place.setWorld(this);
@@ -25,7 +102,6 @@ public class world {
 
         }
     }
-
 
     public void addPath(Path path) throws UnKnownPlaceException {
         Place first = path.firstPlace;
