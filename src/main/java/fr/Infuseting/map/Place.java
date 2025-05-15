@@ -96,10 +96,11 @@ public class Place {
     }
 
     public HashMap<Path, Place> getPaths() {
-        if (world != null) {
-            return world.getPathsFrom(this);
-        }
-        return new HashMap<>();
+        if (world == null) {
+            throw new MondeNonCreeException("Le lieu '" + name + "' n'appartient à aucun monde."
+         );
+      }
+    return world.getPathsFrom(this);
     }
     public List<Place> getAdjacentsPlace() {
         if (world != null) {

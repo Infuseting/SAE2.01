@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class world {
+
     private String name;
+
     public HashMap<Place, HashMap<Path, Place>> cache = new HashMap<>();
 
     public world(String name) {
@@ -95,11 +97,11 @@ public class world {
         return newWorld;
     }
     public void addPlace(Place place) {
-        if (!cache.containsKey(place)) {
-            place.setWorld(this);
-            cache.put(place, new HashMap<>());
-
-        }
+        if (cache.containsKey(place)) {
+            throw new LieuEnDoubleException("Le lieu '" + place.getName() + "' existe déjà dans le monde.");
+            }
+        place.setWorld(this);
+        cache.put(place, new HashMap<>());
     }
 
     public void addPath(Path path) throws UnKnownPlaceException {
@@ -111,6 +113,10 @@ public class world {
         }
         if (!cache.containsKey(second)) {
             throw new UnKnownPlaceException("Deuxième lieu non trouvé : " + second.getName());
+        }
+
+        if (cache.get(first).containsKey(path)) {
+            throw new CheminEnDoubleException( "Le chemin entre '" + first.getName()+ "' et '" + second.getName() + "' existe déjà.");
         }
 
         cache.get(first).put(path, second);
