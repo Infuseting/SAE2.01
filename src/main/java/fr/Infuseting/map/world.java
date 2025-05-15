@@ -3,7 +3,6 @@ package fr.Infuseting.map;
 import fr.Infuseting.entity.Monster;
 import fr.Infuseting.util.JSONArray;
 import fr.Infuseting.util.JSONObject;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.List;
@@ -160,7 +159,7 @@ public class world {
         return found;
     }
 
-    public void removePath(@NotNull Path path) throws UnKnownPlaceException {
+    public void removePath(Path path) throws UnKnownPlaceException {
         Place first = path.firstPlace;
         Place second = path.secondPlace;
 

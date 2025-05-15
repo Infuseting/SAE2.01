@@ -14,6 +14,10 @@ public abstract class Spell {
         this.cost = cost;
     };
 
+    public int getNbTurnLeft() {
+        return nbTurnLeft;
+    }
+
     public boolean apply(Entity entity){
         if(entity.equals(null))return false; // si l'entité est null le sort ne peut être appliqué
         if(nbTurnLeft < 1) return false; // si le nb de tour du sort est à 0 alors il ne peut plus être lancé
@@ -28,6 +32,7 @@ public abstract class Spell {
 
                 }
             }else{ // si le sort a deja été lancé auparavant alors le joueur ne dépense pas de mana a nouveau
+                this.nbTurnLeft--;
                 return true;
             }
         }
