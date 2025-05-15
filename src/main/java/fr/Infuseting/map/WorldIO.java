@@ -9,8 +9,16 @@ import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Represents a file that manages the saving and the loading of Worlds from a json file
+ */
 public class WorldIO {
 
+    /**
+     * Saves a World into a specified file.
+     * @param w the World that needs to be saved.
+     * @param f the File where the World will be saved.
+     */
     public static void saveWorld(World w, File f) {
         Path PATH = createAdventureAndMonsterFolder();
         if (f == null) {
@@ -49,6 +57,11 @@ public class WorldIO {
 
     }
 
+    /**
+     * Loads a World from a json file
+     * @param f the file where the world is saved.
+     * @return the World that was stored in the file.
+     */
     public static World loadWorld(InputStream f) {
         if (f == null) {
             throw new NullPointerException("File is null");
@@ -69,6 +82,10 @@ public class WorldIO {
         return w;
     }
 
+    /**
+     * Creates a Folder where a new adventure will be saved in.
+     * @return the Path of the folder.
+     */
     private static Path createAdventureAndMonsterFolder() {
         String localAppData;
         String os = System.getProperty("os.name").toLowerCase();

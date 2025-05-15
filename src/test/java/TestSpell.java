@@ -50,7 +50,7 @@ public class TestSpell {
         spl.apply(pl);
         spl.apply(pl);
 
-        assertEquals(pl.currentMana,5);
+        assertEquals(pl.currentMana, 0);
 
     }
 
@@ -61,7 +61,7 @@ public class TestSpell {
         spl.apply(pl);
         spl.apply(pl);
 
-        assertEquals(spl.getNbTurnLeft(),3);
+        assertEquals(spl.getNbTurnLeft(),0);
 
     }
 

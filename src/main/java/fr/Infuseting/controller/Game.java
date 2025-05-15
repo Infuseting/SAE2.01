@@ -17,13 +17,25 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * Main class for the game logic.
+ * Handles the game flow, player actions, and interactions with the world.
+ */
 public class Game {
+    /**
+     * Entry point of the application.
+     * Starts the game by calling the play method.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         play();
 
     }
-
+    /**
+     * Main game loop.
+     * Handles the game flow, including map selection, player actions, and interactions with the world.
+     */
     public static void play() {
         //TODO : Demander au joueur de choisir une carte
 
@@ -89,7 +101,10 @@ public class Game {
         //TODO : Si y a un combat on lance le combat et on fait le combat dans l'ordre
 
     }
-
+    /**
+     * Prompts the user to choose an action.
+     * The user can either move to another place or exit the game.
+     */
     private static void chooseUserAction() {
         System.out.println("What do you want to do ?");
         System.out.println("0 - Move to another place");
@@ -111,7 +126,13 @@ public class Game {
 
 
     }
-
+    /**
+     * Handles the fight between the player and a monster.
+     *
+     * @param player  The player participating in the fight.
+     * @param monster The monster to fight.
+     * @return The updated player after the fight.
+     */
     private static Player fightMonster(Player player, Monster monster) {
         Fight fight = new Fight(player, monster);
         while (!fight.isEnd()) {
@@ -123,7 +144,11 @@ public class Game {
         return fight.getPlayer();
 
     }
-
+    /**
+     * Prints the current state of the fight, including player and monster stats.
+     *
+     * @param fight The current fight instance.
+     */
     private static void fightPrint(Fight fight) {
         System.out.println(String.format("Player : \n HP : [%s/%s], ARM : %s, ATT : %s, MAN : [%s/%s] PAE : %s",
                 fight.getPlayer().getCurrentHP(), fight.getPlayer().getMaximumHP(), fight.getPlayer().getArmor(),
@@ -133,7 +158,12 @@ public class Game {
                 fight.getMonster().name, fight.getMonster().getCurrentHP(), fight.getMonster().getMaximumHP(), fight.getMonster().getArmor(),
                 fight.getMonster().getAttack(), fight.getMonster().getEffects()));
     }
-
+    /**
+     * Prompts the player to choose a spell to use during the fight.
+     *
+     * @param player The player choosing the spell.
+     * @return The chosen spell, or null for a basic attack.
+     */
     private static Spell chooseSpell(Player player) {
         List<Spell> spellsPlayer = new ArrayList<>();
         spellsPlayer.add(null);
@@ -164,7 +194,14 @@ public class Game {
             throw new RuntimeException(e);
         }
     }
-
+    /**
+     * Manages the player's interaction with the current place.
+     * Displays the place's description and handles any monster encounters.
+     *
+     * @param world The game world.
+     * @param st    The current place.
+     * @return The monster in the place, if any.
+     */
     private static Monster managerPlace(World world, Place st) {
         clearConsole();
 
@@ -182,7 +219,13 @@ public class Game {
         return null;
     }
 
-
+    /**
+     * Prompts the player to choose a destination from the adjacent places.
+     *
+     * @param world The game world.
+     * @param st    The current place.
+     * @return The chosen destination place.
+     */
     private static Place choosePlace( World world, Place st) {
         System.out.println("You can go to : ");
         List<Place> place = world.getAdjacentsPlace(st);
@@ -213,7 +256,12 @@ public class Game {
 
 
 
-
+    /**
+     * Prompts the player to choose a map to play.
+     * Allows the player to add a new map if none are available.
+     *
+     * @return The chosen game world.
+     */
         private static World chooseMap () {
             System.out.println("You need to choose a map to play :");
             List<File> maps = WorldIO.getMaps();
@@ -263,7 +311,10 @@ public class Game {
 
             return null;
         }
-
+    /**
+     * Clears the console screen.
+     * This method uses ANSI escape codes and may not work on all systems.
+     */
         private static void clearConsole () {
             System.out.print("\033[H\033[2J");
             System.out.flush();

@@ -3,7 +3,11 @@ package fr.Infuseting.fight;
 import fr.Infuseting.entity.Entity;
 import fr.Infuseting.entity.Player;
 
+/**
+ * Represents a healing spell that is used to increase the current number of the player's HP.
+ */
 public class Heal extends Spell{
+
     public Heal(){
         super(1,1,25,20, "Heal");
     }

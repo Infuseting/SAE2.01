@@ -2,6 +2,9 @@ package fr.Infuseting.fight;
 
 import fr.Infuseting.entity.Entity;
 
+/**
+ * Represents a spell that is used by the player to increase their armor stat.
+ */
 public class Shield extends Spell{
     public Shield(){
         super(1,1,25,5, "Shield");

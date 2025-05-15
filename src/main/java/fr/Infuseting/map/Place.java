@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Represents a Place in a World.
+ * A World can have multiple Places but a Place can only have one World.
+ */
 public class Place {
     private int id;
     private String name;
@@ -21,6 +25,16 @@ public class Place {
     private boolean isDefeat;
     private World world;
 
+    /**
+     * Creates a Place with the specified parameters.
+     * @param id the identification number of the Place.
+     * @param name the name of the Place.
+     * @param monster The monster that is present in the Place. (Can be null)
+     * @param description The description of the Place.
+     * @param end The Place where the player needs to be in order to win.
+     * @param start the Place where the player begins the game.
+     * @param defeat a Place where the player dies and loses (GAME OVER !!).
+     */
     public Place(int id, String name, Monster monster, String description, boolean end, boolean start, boolean defeat) {
         this.id = id;
         this.name = name;
@@ -102,6 +116,11 @@ public class Place {
       }
     return world.getPathsFrom(this);
     }
+
+    /**
+     * Returns the List of adjacent places.
+     * @return the List of adjacent places
+     */
     public List<Place> getAdjacentsPlace() {
         if (world != null) {
             return world.getAdjacentsPlace(this);
@@ -109,6 +128,11 @@ public class Place {
         return new ArrayList<>();
     }
 
+    /**
+     * Checks whether or not the specified object is identical to this Place.
+     * @param obj The specified object.
+     * @return true if both objects are equal and false if they are not.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -117,6 +141,10 @@ public class Place {
         return this.id == other.id;
     }
 
+    /**
+     * Returns the hash code value for this list.
+     * @return the hash code value for this list.
+     */
     @Override
     public int hashCode() {
         return Integer.hashCode(id);
