@@ -4,15 +4,15 @@ import fr.Infuseting.entity.Entity;
 import fr.Infuseting.entity.Monster;
 import fr.Infuseting.entity.Player;
 
+import java.util.Scanner;
+
 public class Fight {
     private final Player player;
     private final Monster monster;
 
-    public Fight() {
-        player = new Player();
-        monster = new Monster();
-
-
+    public Fight(Player player, Monster monster) {
+        this.player = player;
+        this.monster = monster;
     }
 
 
@@ -32,6 +32,15 @@ public class Fight {
     }
 
     public Entity newTurn(){
+        for(Spell spell : player.getEffects()){
+            spell.specificEffect(player);
+        }
+        if(player.isDead()) return monster;
+        for(Spell spell : monster.getEffects()){
+            spell.specificEffect(monster);
+        }
+        if(monster.isDead()) return player;
+
         return null;
     }
 }
