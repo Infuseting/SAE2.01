@@ -20,18 +20,17 @@ public class world {
     }
 
     public void addPlace(Place place){
-        cache.add(place);
     }
     public void addPath(Path path){
 
     }
 
     public Place getPlaceFromName(String name){
-        return new Place();
+        return null;
     }
 
     public Place getPlaceFromId(int id){
-        return new Place();
+        return null;
     }
 
     public HashMap<Path,Place> getPathsFrom(Place place){
