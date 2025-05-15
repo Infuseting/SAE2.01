@@ -19,7 +19,7 @@ public class Place {
     private boolean isStart;
 
     private boolean isDefeat;
-    private world world;
+    private World world;
 
     public Place(int id, String name, Monster monster, String description, boolean end, boolean start, boolean defeat) {
         this.id = id;
@@ -31,11 +31,11 @@ public class Place {
         this.isDefeat = defeat;
     }
 
-    public void setWorld(world world) {
+    public void setWorld(World world) {
         this.world = world;
     }
 
-    public world getWorld() {
+    public World getWorld() {
         return world;
     }
 

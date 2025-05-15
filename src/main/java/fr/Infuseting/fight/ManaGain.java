@@ -5,7 +5,7 @@ import fr.Infuseting.entity.Player;
 
 public class ManaGain extends Spell{
     public ManaGain(){
-        super(1,1,25,5);
+        super(1,1,25,5, "ManaGain");
     }
 
     @Override
@@ -17,7 +17,9 @@ public class ManaGain extends Spell{
             }else{
                 ((Player) entity).currentMana += amount;                 //sinon son mana = mana + sort de gain de mana
             }
+
         }
+        this.nbTurnLeft--;
     }
 
     @Override

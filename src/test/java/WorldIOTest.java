@@ -1,5 +1,5 @@
 import fr.Infuseting.map.WorldIO;
-import fr.Infuseting.map.world;
+import fr.Infuseting.map.World;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -9,7 +9,7 @@ public class WorldIOTest {
 
     @Test
     public void testFilesCreation() {
-        WorldIO.saveWorld(new world(null), new File("test.json"));
+        WorldIO.saveWorld(new World(null), new File("test.json"));
     }
     @Test
     public void testFilesLoading() {
@@ -17,7 +17,7 @@ public class WorldIOTest {
         if (inputStream == null) {
             throw new IllegalArgumentException("File not found: world/Monde1.json");
         }
-        world world = WorldIO.loadWorld(inputStream);
+        World world = WorldIO.loadWorld(inputStream);
         System.out.println(world.toJson());
     }
 

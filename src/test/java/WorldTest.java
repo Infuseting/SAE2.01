@@ -7,7 +7,7 @@ public class WorldTest {
 
     @Test
     public void TestException() {
-        world world = new world("Monde1");
+        World world = new World("Monde1");
         Place place1 = new Place(0, "2237", null, "Salle de TP", false, true, false);
         Place place2 = new Place(1, "2236", null, "Salle de TP", false, false, true);
         world.addPlace(place1);
@@ -21,7 +21,7 @@ public class WorldTest {
 
     @Test
     void testThrowsEstPasAdjacent() {
-        world world = new world("Test");
+        World world = new World("Test");
         Place a = new Place(1, "A", null, "", false, false, false);
         Place b = new Place(2, "B", null, "", false, false, false);
         Place c = new Place(3, "C", null, "", false, false, false);
@@ -44,7 +44,7 @@ public class WorldTest {
     @Test
     void testCheckPathExists() throws Exception {
         // Préparation du monde et des lieux
-        world w = new world("TestWorld");
+        World w = new World("TestWorld");
         Place a = new Place(1, "A", null, "", false, false, false);
         Place b = new Place(2, "B", null, "", false, false, false);
         w.addPlace(a);
@@ -65,7 +65,7 @@ public class WorldTest {
 
     @Test
     void testLieuEnDoubleException() {
-        world w = new world("TestWorld");
+        World w = new World("TestWorld");
         Place p = new Place(1, "A", null, "Start place", false, false, false);
         w.addPlace(p);
         // Ajouter une deuxième fois doit lever DuplicatePlaceException
@@ -74,7 +74,7 @@ public class WorldTest {
 
     @Test
     void testCheminEnDoubleException() throws UnKnownPlaceException {
-        world w = new world("TestWorld");
+        World w = new World("TestWorld");
         Place a = new Place(1, "A", null, "Place A", false, false, false);
         Place b = new Place(2, "B", null, "Place B", false, false, false);
         w.addPlace(a);

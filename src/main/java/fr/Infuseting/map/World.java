@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-public class world {
+public class World {
 
     private String name;
 
     public HashMap<Place, HashMap<Path, Place>> cache = new HashMap<>();
 
-    public world(String name) {
+    public World(String name) {
         this.name = name;
     }
 
@@ -58,8 +58,8 @@ public class world {
 
     }
 
-    public static world loadJson(JSONObject json) {
-        world newWorld = new world(json.getString("world"));
+    public static World loadJson(JSONObject json) {
+        World newWorld = new World(json.getString("world"));
         JSONArray placesJson = json.getJSONArray("places");
 
         for (Object placeObject : placesJson.getData()) {

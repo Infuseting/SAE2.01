@@ -6,14 +6,17 @@ public abstract class Spell {
     protected int nbTurnLeft;
     protected int amount;
     protected int cost;
-
-    public Spell(int duration, int nbTurnLeft, int amount, int cost){
+    protected String name;
+    public Spell(int duration, int nbTurnLeft, int amount, int cost, String name){
         this.duration = duration;
         this.nbTurnLeft = nbTurnLeft;
         this.amount = amount;
         this.cost = cost;
+        this.name = name;
     };
-
+    public int getManaCost() {
+        return cost;
+    }
     public int getNbTurnLeft() {
         return nbTurnLeft;
     }
@@ -26,22 +29,26 @@ public abstract class Spell {
                 if (((Player) entity).currentMana < cost)
                     return false; // si son mana est inférieur au cout du sort alors il ne peut pas l'appliquer
                 else {
-                    this.nbTurnLeft--; // sinon il peut est le nombre de tour décremente
                     ((Player) entity).currentMana -= cost; // son mana est mis à jour
                     return true;
 
                 }
             }else{ // si le sort a deja été lancé auparavant alors le joueur ne dépense pas de mana a nouveau
-                this.nbTurnLeft--;
                 return true;
             }
         }
-        this.nbTurnLeft --; // si le joueur n'est pas un player alors son mana n'a pas besoin d'être mis à jour mais le nb de tour doit etre décrémenter aussi
         return true;
 
     }
-
+    public String getName() {
+        return name;
+    }
     public  abstract void specificEffect(Entity entity);
 
     public abstract  boolean isSelfSpell();
+
+    @Override
+    public String toString() {
+        return String.format("%s (Durée: %s, Coût: %s, Nombre de tours restants: %s, Damage : %s) ", name, duration, cost, nbTurnLeft, amount);
+    }
 }

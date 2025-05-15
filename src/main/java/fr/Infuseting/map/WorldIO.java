@@ -7,10 +7,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.file.Path;
+import java.util.List;
 
 public class WorldIO {
 
-    public static void saveWorld(world w, File f) {
+    public static void saveWorld(World w, File f) {
         Path PATH = createAdventureAndMonsterFolder();
         if (f == null) {
             throw new NullPointerException("File is null");
@@ -48,7 +49,7 @@ public class WorldIO {
 
     }
 
-    public static world loadWorld(InputStream f) {
+    public static World loadWorld(InputStream f) {
         if (f == null) {
             throw new NullPointerException("File is null");
         }
@@ -63,7 +64,7 @@ public class WorldIO {
             System.err.println("Error loading the world: " + e.getMessage());
         }
         JSONObject jsonObject = new JSONParser(json.toString()).parse();
-        world w = world.loadJson(jsonObject);
+        World w = World.loadJson(jsonObject);
         System.out.println("World loaded: " + w.getString());
         return w;
     }
@@ -95,6 +96,29 @@ public class WorldIO {
         }
         return Path.of(localAppData, "Adventure&Monster");
     }
+    public static List<File> getMaps() {
+        Path PATH = createAdventureAndMonsterFolder();
+        File worldFolder = PATH.toAbsolutePath().resolve("world").toFile();
+        if (!worldFolder.exists()) {
+            System.err.println("World folder does not exist.");
+            return List.of();
+        }
+        File[] files = worldFolder.listFiles();
+        if (files != null) {
+            return List.of(files);
+        } else {
+            System.err.println("No files found in the world folder.");
+            return List.of();
+        }
+    }
 
-
+    public static File getFolder() {
+        Path PATH = createAdventureAndMonsterFolder();
+        File worldFolder = PATH.toAbsolutePath().resolve("world").toFile();
+        if (!worldFolder.exists()) {
+            System.err.println("World folder does not exist.");
+            return null;
+        }
+        return worldFolder;
+    }
 }

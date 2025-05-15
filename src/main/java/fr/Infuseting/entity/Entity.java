@@ -56,12 +56,7 @@ public abstract class Entity {
         effects.add(spell);
     }
     public  void attack(Entity other){
-        int degatMin = 1;
-        if(attack == 0){
-            attack = degatMin;
-        }
-
-        other.currentHP = other.currentHP - (Math.max(0, attack - other.armor));
+        other.currentHP = other.currentHP - (Math.max(1, attack - other.armor));
     };
     public boolean isAlive() {
         if (currentHP < 1) return false;

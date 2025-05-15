@@ -2,6 +2,8 @@ package fr.Infuseting.entity;
 
 import fr.Infuseting.fight.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Player extends Entity{
@@ -32,4 +34,10 @@ public class Player extends Entity{
 
     }
 
+    public List<Spell> getUsableSpells() {
+            List<Spell> usableSpells = new ArrayList<>(spells);
+            usableSpells.removeIf(sp -> sp.getManaCost() > currentMana);
+            return usableSpells;
+
+    }
 }

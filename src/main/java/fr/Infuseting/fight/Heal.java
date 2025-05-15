@@ -5,7 +5,7 @@ import fr.Infuseting.entity.Player;
 
 public class Heal extends Spell{
     public Heal(){
-        super(1,1,25,20);
+        super(1,1,25,20, "Heal");
     }
 
 
@@ -26,7 +26,11 @@ public class Heal extends Spell{
             else {
                 entity.setCurrentHP(entity.getCurrentHP()+amount); //sinon le sort est ajouté au montant d'hp
             }
+
+
         }
+
+        this.nbTurnLeft--;
 
     }
 }

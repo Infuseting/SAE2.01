@@ -4,7 +4,7 @@ import fr.Infuseting.entity.Entity;
 
 public class Poison extends Spell{
     public Poison(){
-        super(5,5,25,5);
+        super(5,5,25,5, "Poison");
     }
 
     @Override
@@ -15,6 +15,6 @@ public class Poison extends Spell{
     @Override
     public void specificEffect(Entity entity) {
         entity.setCurrentHP(entity.getCurrentHP()-amount); // Les degats du poison sont soustrait au currentHp du joueur
-
+        this.nbTurnLeft--;
     }
 }
