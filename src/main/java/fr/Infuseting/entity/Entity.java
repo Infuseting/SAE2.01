@@ -11,7 +11,23 @@ public abstract class Entity {
     protected int attack;
     protected List<Spell> effects;
 
-    public abstract void attack(Entity other);
-    public abstract void isAlive();
-    public abstract void isDead();
+    public  void attack(Entity other){
+        int degatMin = 1;
+        if(attack == 0){
+            attack = degatMin;
+        }
+
+        other.currentHP -= attack;
+        other.armor -= attack;
+    };
+    public boolean isAlive() {
+        if (currentHP < 1) return false;
+
+        return true;
+    };
+    public boolean isDead(){
+        if(currentHP <= 0) return true;
+        return false;
+
+    };
 }

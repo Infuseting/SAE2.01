@@ -12,18 +12,7 @@ public class Monster extends Entity {
         return "";
     }
 
-    @Override
-    public void attack(Entity other) {
 
-    }
 
-    @Override
-    public void isAlive() {
 
-    }
-
-    @Override
-    public void isDead() {
-
-    }
 }
