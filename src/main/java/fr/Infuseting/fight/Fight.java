@@ -17,6 +17,9 @@ public class Fight {
      * Constructs a fight between the specified player and monster
      */
     public Fight(Player player, Monster monster) {
+        if (player == null || monster == null) {
+            throw new IllegalArgumentException("Player and monster cannot be null");
+        }
         this.player = player;
         this.monster = monster;
     }

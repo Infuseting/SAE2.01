@@ -16,6 +16,9 @@ public class Monster extends Entity {
      * @return the created monster.
      */
     public static Monster createMonsterFromJSON(JSONObject json) {
+        if (json == null) {
+            throw new IllegalArgumentException("JSON object cannot be null");
+        }
         Monster monster = new Monster();
         monster.name = json.getString("name");
         monster.maximumHP = (Integer) json.getNumber("HP");

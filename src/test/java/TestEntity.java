@@ -68,7 +68,6 @@ public class TestEntity {
 
 
     @Test
-
     public void testIsDead1(){
         Player joueur = new Player(15,20,10,50,80,120);
         assertFalse(joueur.isDead());

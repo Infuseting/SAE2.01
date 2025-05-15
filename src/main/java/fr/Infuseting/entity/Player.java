@@ -62,10 +62,16 @@ public class Player extends Entity{
      * @param target The Entity that is targetted by the spell.
      */
     public void castSpell(Spell spell, Entity target) {
-      if(spell.apply(target)){
-          spell.specificEffect(target);
-          target.addEffects(spell);
-      }
+        if (spell == null) {
+            throw new NullPointerException("Spell is null");
+        }
+        if (target == null) {
+            throw new NullPointerException("Target is null");
+        }
+        if(spell.apply(target)){
+            spell.specificEffect(target);
+            target.addEffects(spell);
+        }
 
     }
     /**

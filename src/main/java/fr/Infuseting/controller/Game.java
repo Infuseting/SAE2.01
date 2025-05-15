@@ -4,9 +4,7 @@ import fr.Infuseting.entity.Monster;
 import fr.Infuseting.entity.Player;
 import fr.Infuseting.fight.Fight;
 import fr.Infuseting.fight.Spell;
-import fr.Infuseting.map.Place;
-import fr.Infuseting.map.World;
-import fr.Infuseting.map.WorldIO;
+import fr.Infuseting.map.*;
 
 import java.awt.*;
 import java.io.File;
@@ -298,12 +296,13 @@ public class Game {
                     try (InputStream inputStream = new FileInputStream(selectedMap)) {
                         world = WorldIO.loadWorld(inputStream);
                     } catch (Exception e) {
-                        System.err.println("Error loading the selected map: " + e.getMessage());
+                        throw new ErrorWhileReadingWorld("Error while loading the world: " + e.getMessage());
                     }
                     if (world == null) {
-                        System.err.println("Failed to load the map.");
+                        System.out.println("This world map files is incorrect");
                         clearConsole();
                         play();
+
                     }
                     return world;
                  } catch (Exception e) {

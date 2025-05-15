@@ -9,7 +9,7 @@ public class WorldIOTest {
 
     @Test
     public void testFilesCreation() {
-        WorldIO.saveWorld(new World(null), new File("test.json"));
+        WorldIO.saveWorld(new World("test"), new File("test.json"));
     }
     @Test
     public void testFilesLoading() {

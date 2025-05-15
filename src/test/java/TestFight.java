@@ -8,8 +8,7 @@ import fr.Infuseting.fight.Spell;
 import fr.Infuseting.util.JSONParser;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFight {
     @Test
@@ -87,4 +86,14 @@ public class TestFight {
         combat.newTurn();
         assertEquals(monster.getCurrentHP(), 0);
     }
+
+    @Test
+    public void TestTurnWithNullMonster() {
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\"name\": \"Ragondin\",\"HP\": 50,\"Armor\": 10,\"Attack\": 20}").parse());
+        assertThrows(IllegalArgumentException.class, () -> {
+            Fight combat = new Fight(null, monster);
+        });
+
+    }
+
 }

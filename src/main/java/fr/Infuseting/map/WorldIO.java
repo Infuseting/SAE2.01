@@ -32,7 +32,7 @@ public class WorldIO {
         if (!worldFolder.exists()) {
             boolean created = worldFolder.mkdirs();
             if (!created) {
-                System.err.println("Failed to create the world folder.");
+                throw new ErrorWhileSavingWorld("Failed to create the world folder.");
             }
         }
 
@@ -44,13 +44,13 @@ public class WorldIO {
                     throw new FileNotFoundException("File already exists");
                 }
             } catch (Exception e) {
-                System.err.println("Error creating the file: " + e.getMessage());
+                throw new ErrorWhileSavingWorld("Error while creating the file: " + e.getMessage());
             }
         }
         try (java.io.FileWriter writer = new java.io.FileWriter(file)) {
             writer.write(w.toJson());
         } catch (Exception e) {
-            System.err.println("Error writing to the file: " + e.getMessage());
+            throw new ErrorWhileSavingWorld("Error while writing to the file: " + e.getMessage());
         }
 
 
@@ -63,7 +63,7 @@ public class WorldIO {
      * @param f the file where the world is saved.
      * @return the World that was stored in the file.
      */
-    public static World loadWorld(InputStream f) {
+    public static World loadWorld(InputStream f) throws ErrorWhileReadingWorld {
         if (f == null) {
             throw new NullPointerException("File is null");
         }
@@ -75,7 +75,7 @@ public class WorldIO {
                 json.append((char) ch);
             }
         } catch (Exception e) {
-            System.err.println("Error loading the world: " + e.getMessage());
+            throw new ErrorWhileReadingWorld("Error while reading the file: " + e.getMessage());
         }
         JSONObject jsonObject = new JSONParser(json.toString()).parse();
         World w = World.loadJson(jsonObject);
@@ -106,11 +106,11 @@ public class WorldIO {
             if (!folder.exists()) {
                 boolean created = folder.mkdirs();
                 if (!created) {
-                    System.err.println("Failed to create the Adventure&Monster folder.");
+                    throw new ErrorWhileSavingWorld("Failed to create the Adventure&Monster folder.");
                 }
             }
         } else {
-            System.err.println("Could not determine a suitable directory for Adventure&Monster.");
+            throw new ErrorWhileSavingWorld("Unsupported operating system: " + os);
         }
         return Path.of(localAppData, "Adventure&Monster");
     }

@@ -130,6 +130,9 @@ public class World {
         if (cache.containsKey(place)) {
             throw new LieuEnDoubleException("Le lieu '" + place.getName() + "' existe déjà dans le monde.");
             }
+        if (getPlaceFromId(place.getId()) != null) {
+            throw new LieuEnDoubleException("Le lieu avec l'ID '" + place.getId() + "' existe déjà dans le monde.");
+        }
         place.setWorld(this);
         cache.put(place, new HashMap<>());
     }
@@ -140,6 +143,9 @@ public class World {
      * @throws UnKnownPlaceException
      */
     public void addPath(Path path) throws UnKnownPlaceException {
+        if (path == null) {
+            throw new IllegalArgumentException("Le chemin ne peut pas être nul.");
+        }
         Place first = path.firstPlace;
         Place second = path.secondPlace;
 
@@ -269,6 +275,9 @@ public class World {
      * @throws PathNotFoundException
      */
     public void checkPathExists(Path path) throws PathNotFoundException {
+        if (path == null) {
+            throw new IllegalArgumentException("Le chemin ne peut pas être nul.");
+        }
         Place first = path.firstPlace;
         Place second = path.secondPlace;
         if (!cache.containsKey(first)) {

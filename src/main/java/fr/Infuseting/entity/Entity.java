@@ -22,7 +22,13 @@ public abstract class Entity {
     }
 
     public void setCurrentHP(int currentHP) {
-        this.currentHP = currentHP;
+        if (currentHP < 0) {
+            this.currentHP = 0;
+        } else if (currentHP > maximumHP) {
+            this.currentHP = maximumHP;
+        } else {
+            this.currentHP = currentHP;
+        }
     }
 
     public int getMaximumHP() {
