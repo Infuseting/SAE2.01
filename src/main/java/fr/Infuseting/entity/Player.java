@@ -9,4 +9,18 @@ public class Player extends Entity{
 
     }
 
+    @Override
+    public void attack(Entity other) {
+
+    }
+
+    @Override
+    public void isAlive() {
+
+    }
+
+    @Override
+    public void isDead() {
+
+    }
 }
