@@ -64,4 +64,4 @@ Le projet sera noté sur les critères suivants :
 
 ---
 
-Assurez-vous de suivre les instructions et de respecter les délais pour chaque livrable. Bon développement !
+Lien vers la javadocs (https://infuseting.fr/SAE2.01/javadocs/)
