@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fr.Infuseting.controller"},{"l":"fr.Infuseting.entity"},{"l":"fr.Infuseting.fight"},{"l":"fr.Infuseting.map"},{"l":"fr.Infuseting.util"}];updateSearchResults();

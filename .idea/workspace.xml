@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a5e47e2-277b-4a34-8ac5-80f4ef0eb1f0" name="Changes" comment="[FEATURE] Ajout des auteurs + readme.md">
+      <change afterPath="$PROJECT_DIR$/javadocs/JSONParserTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/TestEntity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/TestFight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/TestSpell.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/WorldIOTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/WorldTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/controller/Game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/controller/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/controller/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/entity/Entity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/entity/Monster.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/entity/Player.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/entity/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/entity/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Fight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Heal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/ManaGain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Poison.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Shield.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Spell.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/Strength.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/fight/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/CheminEnDoubleException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/EstPasAdjacent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/LieuEnDoubleException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/MondeNonCreeException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/Path.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/PathNotFoundException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/Place.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/UnKnownPlaceException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/World.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/WorldIO.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/map/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/util/JSONArray.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/util/JSONObject.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/util/JSONParser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/util/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/fr/Infuseting/util/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/copy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/resource-files/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/script-files/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/script-files/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/script-files/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/script-files/search-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/script-files/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadocs/type-search-index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="worldIo" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Infuseting"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Infuseting/SAE2.01.git",
+    "accountId": "a90727e9-a11b-40f0-853e-75b4f2111424"
+  }
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files (x86)\php-8.3.11\php.exe" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2x7TAgBXvWBBO2MrLuLUoIaOUfR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Game.executor": "Run",
+    "JUnit.JSONParserTest.executor": "Run",
+    "JUnit.TestEntity.executor": "Run",
+    "JUnit.TestFight.TestTurn_avec_spell.executor": "Run",
+    "JUnit.TestFight.executor": "Run",
+    "JUnit.TestSpell.executor": "Run",
+    "JUnit.WorldIOTest.executor": "Run",
+    "JUnit.WorldIOTest.testFilesCreation.executor": "Run",
+    "JUnit.WorldIOTest.testFilesLoading.executor": "Run",
+    "JUnit.WorldTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/serre/IdeaProjects/sae2.1/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/serre/IdeaProjects/sae2.1/sae2.01/src/main/java/fr/Infuseting/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\serre\IdeaProjects\sae2.1\src\main\resources" />
+      <recent name="C:\Users\serre\IdeaProjects\sae2.1\src\main\resources\world" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\serre\IdeaProjects\sae2.1\src\main\resources\world" />
+      <recent name="C:\Users\serre\IdeaProjects\sae2.1\src\test\java" />
+      <recent name="C:\Users\serre\IdeaProjects\sae2.1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.WorldTest">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="sae2.1" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="sae2.1" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sae2.01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEntity" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sae2.01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFight" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSpell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sae2.01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSpell" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorldIOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sae2.01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WorldIOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sae2.01" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WorldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="lua.app" factoryName="Lua Application">
+      <option name="program" value="lua.exe" />
+      <option name="file" value="" />
+      <option name="workingDir" value="$PROJECT_DIR$/sae2.01/src/main/java" />
+      <option name="debuggerType" value="1" />
+      <option name="params" value="" />
+      <option name="charset" value="UTF-8" />
+      <option name="showConsole" value="true" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WorldTest" />
+        <item itemvalue="JUnit.WorldIOTest" />
+        <item itemvalue="JUnit.TestSpell" />
+        <item itemvalue="JUnit.TestFight" />
+        <item itemvalue="JUnit.TestEntity" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a5e47e2-277b-4a34-8ac5-80f4ef0eb1f0" name="Changes" comment="" />
+      <created>1747287970330</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747287970330</updated>
+      <workItem from="1747287971655" duration="34146000" />
+    </task>
+    <task id="LOCAL-00001" summary="[INITIAL COMMIT]">
+      <option name="closed" value="true" />
+      <created>1747288150911</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747288150911</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[FEATURES] AJOUT DES FICHIERS DE GESTION DES ENTITES">
+      <option name="closed" value="true" />
+      <created>1747288621719</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747288621719</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[DEPENDENCIES] AJOUT D'UNE LIB POUR GERER LES FICHIERS JSON.&#10;[FIX] Ajout des dependences de la classe Entity dans Player et Monster">
+      <option name="closed" value="true" />
+      <created>1747289186689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747289186689</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[DEPENDENCIES] Ajout JUNIT, On a enlevé org.json&#10;&#10;[FEATURES] Ajout d'un gestionnaire de JSON avec un manager par Object en soit et un systeme de gestion en Liste&#10;&#10;[TEST] AJOUT D'UNE CLASSE DE TEST POUR VERIFIER LE FONCTIONNEMENT DE JSONPARSER">
+      <option name="closed" value="true" />
+      <created>1747294280330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747294280330</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[FIX] Fix du JSONObject qui n'utilisait pas le bon fichier">
+      <option name="closed" value="true" />
+      <created>1747294311875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747294311875</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[FEATURE] Ajout du gestionnaire de monde avec saveWorld et loadWorld&#10;[FIX] Modification de beaucoup de class pour pouvoir permettre la transformation de Json a String et l'inverse.">
+      <option name="closed" value="true" />
+      <created>1747305287230</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747305287230</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[Merge] Merge Spell / Test Antoine / Entity.&#10;[FIX] Fix d'erreur banal liée au merge&#10;[FIX] Changement de placements de certains fichiers">
+      <option name="closed" value="true" />
+      <created>1747307269447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747307269447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[FIX] Changement de place pour certains fichiers.&#10;[FIX] Fix au niveau des test entity et test fight en raison d'incompatibilité lié a des differences de dev entre deux branches">
+      <option name="closed" value="true" />
+      <created>1747309378045</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747309378045</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[FEATURES] AJOUT DU SYSTEME DE JEU&#10;[FIX] On a reparer le systeme de gestion des instances liée au spell du joueur qui se recopier. &#10;[FEATURES] Protection des scanner pour eviter les crash.&#10;[FIX] Bug qui fait que un sort êtant deux fois sur une même personne ne baisse pas au niveau de duration.&#10;[FIX] Degat minimum remis a 1. Au lieu de 0.&#10;[FEATURES] Ajout des noms pour les sorts.&#10;[FIX] Passage de world à World&#10;[FIX] La force augmentait a chaque tour et ne diminuer jamais&#10;[FEATURE] Integration d'un dossier stockant les maps (On peut rajouter des maps custom ultra facilement %LOCALAPPDATA%/Adventure&amp;Monster/world)">
+      <option name="closed" value="true" />
+      <created>1747323740902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747323740902</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/comment'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/fr/Infuseting/fight/Fight.java&#10;#&#9;src/main/java/fr/Infuseting/fight/Spell.java&#10;#&#9;src/main/java/fr/Infuseting/map/World.java&#10;#&#9;src/main/java/fr/Infuseting/map/WorldIO.java">
+      <option name="closed" value="true" />
+      <created>1747324557119</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747324557119</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[FEATURE] Ajout des auteurs + readme.md">
+      <option name="closed" value="true" />
+      <created>1747325486718</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747325486718</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[INITIAL COMMIT]" />
+    <MESSAGE value="[FEATURES] AJOUT DES FICHIERS DE GESTION DES ENTITES" />
+    <MESSAGE value="[DEPENDENCIES] AJOUT D'UNE LIB POUR GERER LES FICHIERS JSON.&#10;[FIX] Ajout des dependences de la classe Entity dans Player et Monster" />
+    <MESSAGE value="[DEPENDENCIES] Ajout JUNIT, On a enlevé org.json&#10;&#10;[FEATURES] Ajout d'un gestionnaire de JSON avec un manager par Object en soit et un systeme de gestion en Liste&#10;&#10;[TEST] AJOUT D'UNE CLASSE DE TEST POUR VERIFIER LE FONCTIONNEMENT DE JSONPARSER" />
+    <MESSAGE value="[FIX] Fix du JSONObject qui n'utilisait pas le bon fichier" />
+    <MESSAGE value="[FEATURE] Ajout du gestionnaire de monde avec saveWorld et loadWorld&#10;[FIX] Modification de beaucoup de class pour pouvoir permettre la transformation de Json a String et l'inverse." />
+    <MESSAGE value="[Merge] Merge Spell / Test Antoine / Entity.&#10;[FIX] Fix d'erreur banal liée au merge&#10;[FIX] Changement de placements de certains fichiers" />
+    <MESSAGE value="[FIX] Changement de place pour certains fichiers.&#10;[FIX] Fix au niveau des test entity et test fight en raison d'incompatibilité lié a des differences de dev entre deux branches" />
+    <MESSAGE value="[FEATURES] AJOUT DU SYSTEME DE JEU&#10;[FIX] On a reparer le systeme de gestion des instances liée au spell du joueur qui se recopier. &#10;[FEATURES] Protection des scanner pour eviter les crash.&#10;[FIX] Bug qui fait que un sort êtant deux fois sur une même personne ne baisse pas au niveau de duration.&#10;[FIX] Degat minimum remis a 1. Au lieu de 0.&#10;[FEATURES] Ajout des noms pour les sorts.&#10;[FIX] Passage de world à World&#10;[FIX] La force augmentait a chaque tour et ne diminuer jamais&#10;[FEATURE] Integration d'un dossier stockant les maps (On peut rajouter des maps custom ultra facilement %LOCALAPPDATA%/Adventure&amp;Monster/world)" />
+    <MESSAGE value="[FIX] Ajout des commentaires dans Game.java&#10;[FIX] Ajout d'un commentaire dans Player.java&#10;[FIX] Fix d'une erreur liée a un mauvais merge sur le dernier commit" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/comment'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/fr/Infuseting/fight/Fight.java&#10;#&#9;src/main/java/fr/Infuseting/fight/Spell.java&#10;#&#9;src/main/java/fr/Infuseting/map/World.java&#10;#&#9;src/main/java/fr/Infuseting/map/WorldIO.java" />
+    <MESSAGE value="[FEATURE] Ajout des auteurs + readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Ajout des auteurs + readme.md" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
