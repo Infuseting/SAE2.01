@@ -1,6 +1,6 @@
 package fr.Infuseting.entity;
 
-import org.json.JSONObject;
+import fr.Infuseting.util.JSONObject;
 
 public class Monster extends Entity {
     public String name;
