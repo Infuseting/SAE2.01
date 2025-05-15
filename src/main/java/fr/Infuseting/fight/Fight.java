@@ -4,19 +4,28 @@ import fr.Infuseting.entity.Entity;
 import fr.Infuseting.entity.Monster;
 import fr.Infuseting.entity.Player;
 
-import java.util.Scanner;
-
+/**
+ * Represents a fight between the player and monster that get stored into that class.
+ * Provides methods to simulate a turn-by-turn type fight between the player and the monster where the player strikes first
+ */
 public class Fight {
     private final Player player;
     private final Monster monster;
 
+    /**
+     * Constructs a fight between the specified player and monster
+     */
     public Fight(Player player, Monster monster) {
         this.player = player;
         this.monster = monster;
     }
 
 
-
+    /**
+     * Starts a turn of the fight where the player starts and casts a spell. If the monster did not die from the attack, then it will strike back the player.
+     * @param spell Specifies the spell that is used by the player. If the spell is null, the player will use his base attack.
+     * @return the winner of this turn. If nobody died, null is returned.
+     */
     public Entity turn(Spell spell){
         if(spell==null) player.attack(monster);
         else if (spell.isSelfSpell()) player.castSpell(spell, player);
@@ -32,6 +41,10 @@ public class Fight {
         else return null;
     }
 
+    /**
+     * Applies the effects of the spells present in the effects List in the Entity class before the turn started.
+     * @return  the winner of this turn. If nobody died, null is returned.
+     */
     public Entity newTurn(){
         for(Spell spell : player.getEffects()){
             spell.specificEffect(player);
@@ -45,9 +58,18 @@ public class Fight {
         return null;
     }
 
+    /**
+     *
+     * @return the player of this Fight.
+     */
     public Player getPlayer() {
         return player;
     }
+
+    /**
+     *
+     * @return the monster of this Fight.
+     */
     public Monster getMonster() {
         return monster;
     }

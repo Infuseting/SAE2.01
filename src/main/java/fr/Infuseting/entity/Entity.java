@@ -5,6 +5,10 @@ import fr.Infuseting.fight.Spell;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents an Entity that has a specified HP, max HP, armor, attack and a list of effects.
+ * Provides methods to attack other Entities and other methods that say if an entity has died or is still alive.
+ */
 public abstract class Entity {
     protected int currentHP;
     protected int maximumHP;
@@ -52,9 +56,18 @@ public abstract class Entity {
         this.effects = effects;
     }
 
+    /**
+     * Adds an effect to the effects List.
+     * @param spell The specified spell effect that will be added to the effects List.
+     */
     public void addEffects(Spell spell){
         effects.add(spell);
     }
+
+    /**
+     * Makes this entity attack an other specified one.
+     * @param other The target of the attack.
+     */
     public  void attack(Entity other){
         int degatMin = 1;
         if(attack == 0){
@@ -63,11 +76,21 @@ public abstract class Entity {
 
         other.currentHP = other.currentHP - (Math.max(0, attack - other.armor));
     };
+
+    /**
+     * Indicates whether or not this Entity is alive or not
+     * @return true if the Entity is alive and false if it isn't.
+     */
     public boolean isAlive() {
         if (currentHP < 1) return false;
 
         return true;
     };
+
+    /**
+     * Indicates whether or not this Entity is dead or not
+     * @return true if the Entity is dead and false if it isn't.
+     */
     public boolean isDead(){
         if(currentHP <= 0) return true;
         return false;
