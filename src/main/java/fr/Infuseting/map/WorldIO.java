@@ -8,9 +8,16 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.file.Path;
 
+/**
+ * Represents a file that manages the saving and the loading of Worlds from a json file
+ */
 public class WorldIO {
-
-    public static void saveWorld(world w, File f) {
+    /**
+     * Saves a World into a specified file.
+     * @param w the World that needs to be saved.
+     * @param f the File where the World will be saved.
+     */
+    public static void saveWorld(World w, File f) {
         Path PATH = createAdventureAndMonsterFolder();
         if (f == null) {
             throw new NullPointerException("File is null");
@@ -48,7 +55,12 @@ public class WorldIO {
 
     }
 
-    public static world loadWorld(InputStream f) {
+    /**
+     * Loads a World from a json file
+     * @param f the file where the world is saved.
+     * @return the World that was stored in the file.
+     */
+    public static World loadWorld(InputStream f) {
         if (f == null) {
             throw new NullPointerException("File is null");
         }
@@ -63,11 +75,15 @@ public class WorldIO {
             System.err.println("Error loading the world: " + e.getMessage());
         }
         JSONObject jsonObject = new JSONParser(json.toString()).parse();
-        world w = world.loadJson(jsonObject);
+        World w = World.loadJson(jsonObject);
         System.out.println("World loaded: " + w.getString());
         return w;
     }
 
+    /**
+     * Creates a Folder where a new adventure will be saved in.
+     * @return the Path of the folder.
+     */
     private static Path createAdventureAndMonsterFolder() {
         String localAppData;
         String os = System.getProperty("os.name").toLowerCase();
