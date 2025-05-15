@@ -3,10 +3,12 @@ import fr.Infuseting.entity.Monster;
 import fr.Infuseting.entity.Player;
 import fr.Infuseting.fight.Fight;
 import fr.Infuseting.fight.Heal;
+import fr.Infuseting.fight.Poison;
 import fr.Infuseting.fight.Spell;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class TestFight {
     @Test
@@ -35,7 +37,7 @@ public class TestFight {
         Fight combat = new Fight(player, monster);
         Spell spell = null;
         Entity res = combat.turn(spell);
-        assertEquals(res, null);
+        assertNull(res);
     }
 
     @Test
@@ -61,5 +63,16 @@ public class TestFight {
         player.attack(monster);
         Entity res = combat.turn(spell);
         assertEquals(res, player);
+    }
+
+    @Test
+    public void TestNewTurn(){
+        Player player = new Player();
+        Monster monster = new Monster();
+        Fight combat = new Fight(player, monster);
+        Spell spell = new Poison();
+        combat.turn(spell);
+        combat.newTurn();
+        assertEquals(monster.getCurentHP(), 30);
     }
 }
