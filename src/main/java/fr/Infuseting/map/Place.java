@@ -5,8 +5,13 @@ import fr.Infuseting.entity.Monster;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import fr.Infuseting.map.Place;
+
 
 public class Place {
+
+    public HashMap<Object, Object> cache;
+
     private int id;
     private String name;
 
@@ -29,27 +34,24 @@ public class Place {
         this.isStart = start;
         this.isDefeat = defeat;
     }
-
-
-
-
-    public List<Place> getAdjacentsPlace(){
-
-        return new ArrayList<Place>();
+    public List<Place> getAdjacentsPlace(Place place) {
+        List<Place> adjacents = new ArrayList<>();
+        if (cache.containsKey(place)) {
+            HashMap<Path, Place> paths = (HashMap<Path, Place>) cache.get(place);
+            adjacents.addAll(paths.values());
+        }
+        return adjacents;
     }
 
     public HashMap<Path,Place> getPaths(){
-
         return new HashMap<Path,Place>();
     }
 
     public int getId() {
-
         return id;
     }
 
     public void setId(int id) {
-
         this.id = id;
     }
 
