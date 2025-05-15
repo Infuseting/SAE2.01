@@ -28,12 +28,29 @@ public abstract class Spell {
 
                 }
             }else{ // si le sort a deja été lancé auparavant alors le joueur ne dépense pas de mana a nouveau
+                this.nbTurnLeft--;
                 return true;
             }
         }
         this.nbTurnLeft --; // si le joueur n'est pas un player alors son mana n'a pas besoin d'être mis à jour mais le nb de tour doit etre décrémenter aussi
         return true;
 
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public int getNbTurnLeft() {
+        return nbTurnLeft;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public int getCost() {
+        return cost;
     }
 
     public  abstract void specificEffect(Entity entity);
