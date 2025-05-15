@@ -13,7 +13,6 @@ public class Monster extends Entity {
         monster.attack = (Integer)json.getNumber("Attack");
         return monster;
     }
-
     public String asJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);
@@ -23,30 +22,6 @@ public class Monster extends Entity {
         return json.toString();
     }
 
-
-    @Override
-    public void attack(Entity other) {
-
-    }
-
-    @Override
-    public void isAlive() {
-
-    }
-
-    @Override
-    public void isDead() {
-
-    }
-
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("name", name);
-        json.put("HP", maximumHP);
-        json.put("Armor", armor);
-        json.put("Attack", attack);
-        return null;
-    }
 
     @Override
     public String toString() {

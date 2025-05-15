@@ -11,7 +11,66 @@ public abstract class Entity {
     protected int attack;
     protected List<Spell> effects;
 
-    public abstract void attack(Entity other);
-    public abstract void isAlive();
-    public abstract void isDead();
+    public int getCurrentHP() {
+        return currentHP;
+    }
+
+    public void setCurrentHP(int currentHP) {
+        this.currentHP = currentHP;
+    }
+
+    public int getMaximumHP() {
+        return maximumHP;
+    }
+
+    public void setMaximumHP(int maximumHP) {
+        this.maximumHP = maximumHP;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public List<Spell> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(List<Spell> effects) {
+        this.effects = effects;
+    }
+
+    public void addEffects(Spell spell){
+        effects.add(spell);
+    }
+    public  void attack(Entity other){
+        int degatMin = 1;
+        if(attack == 0){
+            attack = degatMin;
+        }
+
+        other.currentHP -= attack;
+        other.armor -= attack;
+    };
+    public boolean isAlive() {
+        if (currentHP < 1) return false;
+
+        return true;
+    };
+    public boolean isDead(){
+        if(currentHP <= 0) return true;
+        return false;
+
+    };
 }
