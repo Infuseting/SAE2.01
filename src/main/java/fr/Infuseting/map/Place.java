@@ -34,22 +34,27 @@ public class Place {
 
 
     public List<Place> getAdjacentsPlace(){
+
         return new ArrayList<Place>();
     }
 
     public HashMap<Path,Place> getPaths(){
+
         return new HashMap<Path,Place>();
     }
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -58,6 +63,7 @@ public class Place {
     }
 
     public Monster getMonster() {
+
         return monster;
     }
 
@@ -70,6 +76,7 @@ public class Place {
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
@@ -82,10 +89,12 @@ public class Place {
     }
 
     public boolean isStart() {
+
         return isStart;
     }
 
     public void setStart(boolean start) {
+
         isStart = start;
     }
 

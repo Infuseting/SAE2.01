@@ -5,4 +5,5 @@ public class Path {
     public Place secondPlace;
 
     public int length;
+
 }

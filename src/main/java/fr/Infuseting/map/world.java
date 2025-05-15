@@ -1,6 +1,7 @@
 package fr.Infuseting.map;
 
-import java.nio.file.Path;
+import fr.Infuseting.map.Path;
+
 import java.util.HashMap;
 
 public class world {
@@ -12,17 +13,27 @@ public class world {
         this.cache = cache;
     }
 
-
-
-
     public String getString(){
         return name;
     }
 
     public void addPlace(Place place){
     }
-    public void addPath(Path path){
 
+    //rajoute un chemin nouvellement crée en se basant qur des lieux déjà existant(Exception)
+    public void addPath (Path path) throws UnKnownPlaceException {
+            Place first = path.firstPlace;
+            Place second = path.secondPlace;
+            //erreur du premier lieu qui ne serait pas trouvé
+            if (!cache.containsKey(first)) {
+                throw new UnKnownPlaceException("Premier lieu non trouvé : " + first.getName());
+            }
+            //erreur du deuxième lieu qui ne serait pas trouvé
+            if (!cache.containsKey(second)) {
+                throw new UnKnownPlaceException("Deuxième lieu non trouvé : " + second.getName());
+            }
+            cache.get(first).put(path, second);
+            cache.get(second).put(path, first);
     }
 
     public Place getPlaceFromName(String name){
