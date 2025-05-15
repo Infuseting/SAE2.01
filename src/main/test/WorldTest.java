@@ -6,6 +6,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WorldTest {
+
     @Test
     public void TestException() {
         world world = new world("Monde1");
@@ -39,6 +40,29 @@ public class WorldTest {
         assertThrows(EstPasAdjacent.class, () -> {
             world.getPlaceIfAdjacent(a, c);
         });
+    }
+
+
+    @Test
+    void testCheckPathExists() throws Exception {
+        // Préparation du monde et des lieux
+        world w = new world("TestWorld");
+        Place a = new Place(1, "A", null, "", false, false, false);
+        Place b = new Place(2, "B", null, "", false, false, false);
+        w.addPlace(a);
+        w.addPlace(b);
+
+        // 1) Chemin enregistré → pas d'exception
+        Path p = new Path(a, b, 10);
+        w.addPath(p);
+        assertDoesNotThrow(() -> w.checkPathExists(p),
+                "Le chemin p devrait exister et ne pas lever d'exception");
+
+        // 2) Chemin non ajouté → PathNotFoundException
+        Path pAbsent = new Path(a, b, 5);
+        assertThrows(PathNotFoundException.class,
+                () -> w.checkPathExists(pAbsent),
+                "Un chemin non ajouté doit lever PathNotFoundException");
     }
 
 }
