@@ -6,11 +6,10 @@ import java.util.ArrayList;
 
 public class world {
     private String name;
-    public HashMap<Place, HashMap<Path, Place>> cache;
+    public HashMap<Place, HashMap<Path, Place>> cache = new HashMap<>();
 
-    public world(String name, HashMap<Place, HashMap<Path, Place>> cache) {
+    public world(String name) {
         this.name = name;
-        this.cache = cache != null ? cache : new HashMap<>();
     }
 
     public String getString() {
@@ -63,8 +62,23 @@ public class world {
         return cache.getOrDefault(place, new HashMap<>());
     }
 
-    public List<Place> getAdjacentsPlace(Place place) {
-        if (!cache.containsKey(place)) return new ArrayList<>();
-        return new ArrayList<>(cache.get(place).values());
+    public Place getPlaceIfAdjacent(Place from, Place to) throws EstPasAdjacent {
+        if (!cache.containsKey(from)) {
+            throw new EstPasAdjacent("Le lieu source '" + from.getName() + "' n'existe pas dans le monde.");
+        }
+
+        Place found = null;
+        for (Place p : cache.get(from).values()) {
+            if (p.equals(to)) {
+                found = p;
+                break;
+            }
+        }
+
+        if (found == null) {
+            throw new EstPasAdjacent("Le lieu '" + to.getName() + "' n'est pas adjacent à '" + from.getName() + "'");
+        }
+
+        return found;
     }
 }
