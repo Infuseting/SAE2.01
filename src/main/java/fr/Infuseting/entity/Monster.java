@@ -9,6 +9,7 @@ public class Monster extends Entity {
         Monster monster = new Monster();
         monster.name = json.getString("name");
         monster.maximumHP = (Integer) json.getNumber("HP");
+        monster.currentHP = monster.maximumHP;
         monster.armor = (Integer) json.getNumber("Armor");
         monster.attack = (Integer)json.getNumber("Attack");
         return monster;

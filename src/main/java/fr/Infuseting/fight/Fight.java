@@ -19,6 +19,7 @@ public class Fight {
 
     public Entity turn(Spell spell){
         if(spell==null) player.attack(monster);
+        else if (spell.isSelfSpell()) player.castSpell(spell, player);
         else player.castSpell(spell, monster);
 
         if(monster.isDead()) {
@@ -42,5 +43,12 @@ public class Fight {
         if(monster.isDead()) return player;
 
         return null;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+    public Monster getMonster() {
+        return monster;
     }
 }

@@ -2,6 +2,7 @@ package fr.Infuseting.entity;
 
 import fr.Infuseting.fight.Spell;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Entity {
@@ -9,7 +10,7 @@ public abstract class Entity {
     protected int maximumHP;
     protected int armor;
     protected int attack;
-    protected List<Spell> effects;
+    protected List<Spell> effects = new ArrayList<>();
 
     public int getCurrentHP() {
         return currentHP;
@@ -60,8 +61,7 @@ public abstract class Entity {
             attack = degatMin;
         }
 
-        other.currentHP -= attack;
-        other.armor -= attack;
+        other.currentHP = other.currentHP - (Math.max(0, attack - other.armor));
     };
     public boolean isAlive() {
         if (currentHP < 1) return false;

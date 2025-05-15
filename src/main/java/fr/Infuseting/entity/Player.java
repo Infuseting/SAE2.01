@@ -7,13 +7,10 @@ import java.util.List;
 public class Player extends Entity{
     public int currentMana;
     public int maximumMana;
-    public List<Spell> spells = List.of(new Heal(),new Shield(),new Strength(),new Poison(),new ManaGain());
-
-
+    public List<Spell> spells;
     public Player(){
-
-    };
-
+        this(100, 100, 10, 20, 30, 30);
+    }
     public Player(   int currentHP, int maximumHP, int armor, int attack, int currentMana,int maxMana,List<Spell> spells){
         this.currentHP = currentHP;
         this.maximumHP = maximumHP;
@@ -25,16 +22,12 @@ public class Player extends Entity{
     }
 
     public Player(int currentHP, int maximumHP, int armor, int attack,int currentMana, int maxMana){
-        this.currentHP = currentHP;
-        this.maximumHP = maximumHP;
-        this.armor = armor;
-        this.attack = attack;
-        this.maximumMana = maxMana;
-        this.currentMana = currentMana;
+        this(currentHP, maximumHP, armor, attack, currentMana, maxMana, List.of(new Heal(),new Shield(),new Strength(),new Poison(),new ManaGain()));
     }
     public void castSpell(Spell spell, Entity target) {
       if(spell.apply(target)){
           spell.specificEffect(target);
+          target.addEffects(spell);
       }
 
     }

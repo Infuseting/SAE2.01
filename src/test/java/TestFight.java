@@ -5,6 +5,7 @@ import fr.Infuseting.fight.Fight;
 import fr.Infuseting.fight.Heal;
 import fr.Infuseting.fight.Poison;
 import fr.Infuseting.fight.Spell;
+import fr.Infuseting.util.JSONParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,7 +15,12 @@ public class TestFight {
     @Test
     public void TestFight_constructeur() {
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\n" +
+                "          \"name\": \"Ragondin\",\n" +
+                "          \"HP\": 50,\n" +
+                "          \"Armor\": 10,\n" +
+                "          \"Attack\": 20\n" +
+                "        }").parse());
         Fight combat = new Fight(player, monster);
         assertEquals(combat.getPlayer(), player);
         assertEquals(combat.getMonster(), monster);
@@ -22,20 +28,27 @@ public class TestFight {
     @Test
     public void TestTurn_sans_spell() {
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\n" +
+                "          \"name\": \"Ragondin\",\n" +
+                "          \"HP\": 50,\n" +
+                "          \"Armor\": 10,\n" +
+                "          \"Attack\": 20\n" +
+                "        }").parse());
         Fight combat = new Fight(player, monster);
         Spell spell = null;
         combat.turn(spell);
-        assertEquals(monster.getCurentHP(), 40);
-        assertEquals(player.getCurentHP(), 140);
+        assertEquals(monster.getCurrentHP(), 40);
+        assertEquals(player.getCurrentHP(), 90);
     }
 
     @Test
     public void TestTurn_pas_de_mort(){
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\"name\": \"Ragondin\",\"HP\": 50,\"Armor\": 10,\"Attack\": 20}").parse());
         Fight combat = new Fight(player, monster);
         Spell spell = null;
+        System.out.println(player.getAttack());
+        System.out.println(monster.getCurrentHP());
         Entity res = combat.turn(spell);
         assertNull(res);
     }
@@ -43,18 +56,17 @@ public class TestFight {
     @Test
     public void TestTurn_avec_spell(){
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\"name\": \"Ragondin\",\"HP\": 50,\"Armor\": 10,\"Attack\": 20}").parse());
         Fight combat = new Fight(player, monster);
         Spell spell = new Heal();
         combat.turn(spell);
-        System.out.println(player.getCurentHP());
-        assertEquals(player.getCurentHP(), 150);
+        assertEquals(player.getCurrentHP(), 90);
     }
 
     @Test
     public void TestTurn_avec_mort(){
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\"name\": \"Ragondin\",\"HP\": 50,\"Armor\": 10,\"Attack\": 20}").parse());
         Fight combat = new Fight(player, monster);
         Spell spell = null;
         player.attack(monster);
@@ -68,11 +80,11 @@ public class TestFight {
     @Test
     public void TestNewTurn(){
         Player player = new Player();
-        Monster monster = new Monster();
+        Monster monster = Monster.createMonsterFromJSON(new JSONParser("{\"name\": \"Ragondin\",\"HP\": 50,\"Armor\": 10,\"Attack\": 20}").parse());
         Fight combat = new Fight(player, monster);
         Spell spell = new Poison();
         combat.turn(spell);
         combat.newTurn();
-        assertEquals(monster.getCurentHP(), 30);
+        assertEquals(monster.getCurrentHP(), 0);
     }
 }

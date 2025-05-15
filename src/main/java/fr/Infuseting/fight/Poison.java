@@ -15,5 +15,6 @@ public class Poison extends Spell{
     @Override
     public void specificEffect(Entity entity) {
         entity.setCurrentHP(entity.getCurrentHP()-amount); // Les degats du poison sont soustrait au currentHp du joueur
+
     }
 }

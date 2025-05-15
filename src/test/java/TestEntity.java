@@ -63,7 +63,6 @@ public class TestEntity {
             if(spl instanceof Strength) attaque = true;
 
         }
-
         assertTrue(heal && shield && poison && mana && attaque);
     }
 
