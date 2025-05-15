@@ -5,27 +5,18 @@ import fr.Infuseting.entity.Monster;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import fr.Infuseting.map.Place;
-
 
 public class Place {
-
-    public HashMap<Object, Object> cache;
-
     private int id;
     private String name;
-
     private Monster monster;
-
     private String description;
-
     private boolean isEnd;
-
     private boolean isStart;
-
     private boolean isDefeat;
+    private world world;
 
-    public Place (int id, String name, Monster monster, String description, boolean end, boolean start, boolean defeat){
+    public Place(int id, String name, Monster monster, String description, boolean end, boolean start, boolean defeat) {
         this.id = id;
         this.name = name;
         this.monster = monster;
@@ -34,17 +25,13 @@ public class Place {
         this.isStart = start;
         this.isDefeat = defeat;
     }
-    public List<Place> getAdjacentsPlace(Place place) {
-        List<Place> adjacents = new ArrayList<>();
-        if (cache.containsKey(place)) {
-            HashMap<Path, Place> paths = (HashMap<Path, Place>) cache.get(place);
-            adjacents.addAll(paths.values());
-        }
-        return adjacents;
+
+    public void setWorld(world world) {
+        this.world = world;
     }
 
-    public HashMap<Path,Place> getPaths(){
-        return new HashMap<Path,Place>();
+    public world getWorld() {
+        return world;
     }
 
     public int getId() {
@@ -56,7 +43,6 @@ public class Place {
     }
 
     public String getName() {
-
         return name;
     }
 
@@ -65,7 +51,6 @@ public class Place {
     }
 
     public Monster getMonster() {
-
         return monster;
     }
 
@@ -78,7 +63,6 @@ public class Place {
     }
 
     public void setDescription(String description) {
-
         this.description = description;
     }
 
@@ -91,12 +75,10 @@ public class Place {
     }
 
     public boolean isStart() {
-
         return isStart;
     }
 
     public void setStart(boolean start) {
-
         isStart = start;
     }
 
@@ -106,5 +88,32 @@ public class Place {
 
     public void setDefeat(boolean defeat) {
         isDefeat = defeat;
+    }
+
+    public HashMap<Path, Place> getPaths() {
+        if (world != null) {
+            return world.getPathsFrom(this);
+        }
+        return new HashMap<>();
+    }
+
+    public List<Place> getAdjacentsPlace() {
+        if (world != null) {
+            return world.getAdjacentsPlace(this);
+        }
+        return new ArrayList<>();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Place)) return false;
+        Place other = (Place) obj;
+        return this.id == other.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
     }
 }

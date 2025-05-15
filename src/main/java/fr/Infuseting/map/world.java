@@ -1,50 +1,70 @@
 package fr.Infuseting.map;
 
-import fr.Infuseting.map.Path;
-
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public class world {
     private String name;
-    public HashMap<Place, HashMap<Path,Place>> cache;
+    public HashMap<Place, HashMap<Path, Place>> cache;
 
-    public world(String name, HashMap<Place,HashMap<Path,Place>> cache){
+    public world(String name, HashMap<Place, HashMap<Path, Place>> cache) {
         this.name = name;
-        this.cache = cache;
+        this.cache = cache != null ? cache : new HashMap<>();
     }
 
-    public String getString(){
+    public String getString() {
         return name;
     }
 
-    public void addPlace(Place place){
+    public void addPlace(Place place) {
+        if (!cache.containsKey(place)) {
+            place.setWorld(this);
+            cache.put(place, new HashMap<>());
+
+        }
     }
 
-    //rajoute un chemin nouvellement crée en se basant qur des lieux déjà existant(Exception)
-    public void addPath (Path path) throws UnKnownPlaceException {
-            Place first = path.firstPlace;
-            Place second = path.secondPlace;
-            //erreur du premier lieu qui ne serait pas trouvé
-            if (!cache.containsKey(first)) {
-                throw new UnKnownPlaceException("Premier lieu non trouvé : " + first.getName());
-            }
-            //erreur du deuxième lieu qui ne serait pas trouvé
-            if (!cache.containsKey(second)) {
-                throw new UnKnownPlaceException("Deuxième lieu non trouvé : " + second.getName());
-            }
-            cache.get(first).put(path, second);
-            cache.get(second).put(path, first);
+
+    public void addPath(Path path) throws UnKnownPlaceException {
+        Place first = path.firstPlace;
+        Place second = path.secondPlace;
+
+        if (!cache.containsKey(first)) {
+            throw new UnKnownPlaceException("Premier lieu non trouvé : " + first.getName());
+        }
+        if (!cache.containsKey(second)) {
+            throw new UnKnownPlaceException("Deuxième lieu non trouvé : " + second.getName());
+        }
+
+        cache.get(first).put(path, second);
+        cache.get(second).put(path, first);
     }
 
-    public Place getPlaceFromName(String name){
+    public Place getPlaceFromName(String name) {
+        for (Place p : cache.keySet()) {
+            if (p.getName().equals(name)) {
+                return p;
+            }
+        }
         return null;
     }
 
-    public Place getPlaceFromId(int id){
+    public Place getPlaceFromId(int id) {
+        for (Place p : cache.keySet()) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
         return null;
     }
 
-    public HashMap<Path,Place> getPathsFrom(Place place){
-        return new HashMap<Path,Place>();
+    public HashMap<Path, Place> getPathsFrom(Place place) {
+        return cache.getOrDefault(place, new HashMap<>());
+    }
+
+    public List<Place> getAdjacentsPlace(Place place) {
+        if (!cache.containsKey(place)) return new ArrayList<>();
+        return new ArrayList<>(cache.get(place).values());
     }
 }
