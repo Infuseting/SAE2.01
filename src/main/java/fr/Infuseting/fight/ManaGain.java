@@ -3,6 +3,9 @@ package fr.Infuseting.fight;
 import fr.Infuseting.entity.Entity;
 import fr.Infuseting.entity.Player;
 
+/**
+ * Represents a spell that increases the player's current amount of mana.
+ */
 public class ManaGain extends Spell{
     public ManaGain(){
         super(1,1,25,5);

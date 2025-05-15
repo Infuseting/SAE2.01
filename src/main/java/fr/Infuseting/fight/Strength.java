@@ -3,6 +3,9 @@ package fr.Infuseting.fight;
 import fr.Infuseting.entity.Entity;
 import fr.Infuseting.entity.Player;
 
+/**
+ * Represents a spell that is used by the player to increase their attack power.
+ */
 public class Strength extends Spell{
 
     public Strength(){

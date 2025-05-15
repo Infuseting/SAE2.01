@@ -2,6 +2,9 @@ package fr.Infuseting.fight;
 
 import fr.Infuseting.entity.Entity;
 
+/**
+ * Represents a spell that is used by the player to inflict on a monster the poison effect.
+ */
 public class Poison extends Spell{
     public Poison(){
         super(5,5,25,5);
