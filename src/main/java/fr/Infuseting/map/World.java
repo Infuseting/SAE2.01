@@ -8,13 +8,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
-public class world {
+/**
+ * Represents the universe where the story takes place
+ * Provides methods to create
+ */
+public class World {
 
     private String name;
 
     public HashMap<Place, HashMap<Path, Place>> cache = new HashMap<>();
 
-    public world(String name) {
+    /**
+     * Constructs a world with the specified name
+     * @param name the name of the World
+     */
+    public World(String name) {
         this.name = name;
     }
 
@@ -25,10 +33,22 @@ public class world {
     public void setString(String name) {
         this.name = name;
     }
+
+    /**
+     * Indicates the adjacent places of the specified place
+     * @param place The selected place
+     * @return the List of places that are adjacent to the specified place
+     */
+
     public List<Place> getAdjacentsPlace(Place place) {
         if (!cache.containsKey(place)) return new ArrayList<>();
         return new ArrayList<>(cache.get(place).values());
     }
+
+    /**
+     * Converts the World into the json format.
+     * @return the World in the json format.
+     */
     public String toJson() {
         JSONObject json = new JSONObject();
         json.put("world", name);
@@ -58,8 +78,12 @@ public class world {
 
     }
 
-    public static world loadJson(JSONObject json) {
-        world newWorld = new world(json.getString("world"));
+    /**
+     * Loads a world from a json object
+     * @param json the json object which the world is loaded from.
+     */
+    public static World loadJson(JSONObject json) {
+        World newWorld = new World(json.getString("world"));
         JSONArray placesJson = json.getJSONArray("places");
 
         for (Object placeObject : placesJson.getData()) {
@@ -96,6 +120,11 @@ public class world {
         }
         return newWorld;
     }
+
+    /**
+     * Adds a place to the place List.
+     * @param place the place that is being added to the List.
+     */
     public void addPlace(Place place) {
         if (cache.containsKey(place)) {
             throw new LieuEnDoubleException("Le lieu '" + place.getName() + "' existe déjà dans le monde.");
@@ -104,6 +133,11 @@ public class world {
         cache.put(place, new HashMap<>());
     }
 
+    /**
+     * Adds a path between the first place and the second place
+     * @param path the specified path that is being added
+     * @throws UnKnownPlaceException
+     */
     public void addPath(Path path) throws UnKnownPlaceException {
         Place first = path.firstPlace;
         Place second = path.secondPlace;
@@ -123,6 +157,11 @@ public class world {
         cache.get(second).put(path, first);
     }
 
+    /**
+     * Gets a Place object from a specified name
+     * @param name The name of the Place that is specified
+     * @return the Place object that corresponds to the specified name.
+     */
     public Place getPlaceFromName(String name) {
         for (Place p : cache.keySet()) {
             if (p.getName().equals(name)) {
@@ -132,6 +171,11 @@ public class world {
         return null;
     }
 
+    /**
+     * Gets a Place object from a specified id
+     * @param id The id of the Place that is specified
+     * @return the Place object that corresponds to the specified id.
+     */
     public Place getPlaceFromId(int id) {
         for (Place p : cache.keySet()) {
             if (p.getId() == id) {
@@ -141,10 +185,22 @@ public class world {
         return null;
     }
 
+    /**
+     * Gets a Path object from a specified Place
+     * @param place The Place that is specified
+     * @return the Path object that corresponds to the specified Place.
+     */
     public HashMap<Path, Place> getPathsFrom(Place place) {
         return cache.getOrDefault(place, new HashMap<>());
     }
 
+    /**
+     * This methods returns the Place
+     * @param from the first place that is being checked
+     * @param to the last place that is being checked
+     * @return the place if it is Adjacent to one of the places between the from Place and the to Place
+     * @throws EstPasAdjacent
+     */
     public Place getPlaceIfAdjacent(Place from, Place to) throws EstPasAdjacent {
         if (!cache.containsKey(from)) {
             throw new EstPasAdjacent("Le lieu source '" + from.getName() + "' n'existe pas dans le monde.");
@@ -165,6 +221,11 @@ public class world {
         return found;
     }
 
+    /**
+     * Removes the specified path
+     * @param path the path that is to be destroyed
+     * @throws UnKnownPlaceException
+     */
     public void removePath(Path path) throws UnKnownPlaceException {
         Place first = path.firstPlace;
         Place second = path.secondPlace;
@@ -180,6 +241,11 @@ public class world {
         cache.get(second).remove(path);
     }
 
+    /**
+     * Removes the specified place
+     * @param place the place that is to be destroyed
+     * @throws UnKnownPlaceException
+     */
     public void removePlace(Place place) throws UnKnownPlaceException {
         if (!cache.containsKey(place)) {
             throw new UnKnownPlaceException("Lieu non trouvé : " + place.getName());
@@ -196,6 +262,11 @@ public class world {
         place.setWorld(null);
     }
 
+    /**
+     * Checks if the specified path exists or not
+     * @param path the path that is to be checked
+     * @throws PathNotFoundException
+     */
     public void checkPathExists(Path path) throws PathNotFoundException {
         Place first = path.firstPlace;
         Place second = path.secondPlace;

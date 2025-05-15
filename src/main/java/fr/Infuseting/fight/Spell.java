@@ -7,6 +7,13 @@ public abstract class Spell {
     protected int amount;
     protected int cost;
 
+    /**
+     * Creates a new spell with a specified duration, number of turns left, amount and cost.
+     * @param duration the specified duration of the spell.
+     * @param nbTurnLeft the numbers of turns that the spell will last for.
+     * @param amount the amount of potency the spell has.
+     * @param cost The mana cost of the spell.
+     */
     public Spell(int duration, int nbTurnLeft, int amount, int cost){
         this.duration = duration;
         this.nbTurnLeft = nbTurnLeft;
@@ -18,6 +25,11 @@ public abstract class Spell {
         return nbTurnLeft;
     }
 
+    /**
+     * Applies a spell to a specified entity.
+     * @param entity an Entity who's the target of the spell.
+     * @return true if the spell apply has been successful and false if it hasn't been.
+     */
     public boolean apply(Entity entity){
         if(entity.equals(null))return false; // si l'entité est null le sort ne peut être appliqué
         if(nbTurnLeft < 1) return false; // si le nb de tour du sort est à 0 alors il ne peut plus être lancé
@@ -41,7 +53,15 @@ public abstract class Spell {
 
     }
 
+    /**
+     * Applies the respective effects of the spells that are present in the specified entity's effects List.
+     * @param entity the specified entity.
+     */
     public  abstract void specificEffect(Entity entity);
 
+    /**
+     * Indicates if this Spell is supposed to be cast on the user or not.
+     * @return true if the Spell is a SelfSpell, false if it isn't.
+     */
     public abstract  boolean isSelfSpell();
 }
