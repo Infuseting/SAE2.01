@@ -65,5 +65,35 @@ public class WorldTest {
                 "Un chemin non ajouté doit lever PathNotFoundException");
     }
 
+    @Test
+    void testLieuEnDoubleException() {
+        world w = new world("TestWorld");
+        Place p = new Place(1, "A", null, "Start place", false, false, false);
+        w.addPlace(p);
+        // Ajouter une deuxième fois doit lever DuplicatePlaceException
+        assertThrows(LieuEnDoubleException.class, () -> w.addPlace(p));
+    }
+
+    @Test
+    void testCheminEnDoubleException() throws UnKnownPlaceException {
+        world w = new world("TestWorld");
+        Place a = new Place(1, "A", null, "Place A", false, false, false);
+        Place b = new Place(2, "B", null, "Place B", false, false, false);
+        w.addPlace(a);
+        w.addPlace(b);
+        Path path = new Path(a, b, 10);
+        w.addPath(path);
+        // Ajouter le même chemin doit lever DuplicatePathException
+        assertThrows(CheminEnDoubleException.class, () -> w.addPath(path));
+    }
+
+    @Test
+    void testMondeNonCreeException_getPaths() {
+        // Crée un lieu sans l'ajouter à un monde
+        Place p = new Place(1, "X", null, "Orphan place", false, false, false);
+        // Appel à getPaths sans monde doit lever WorldNotInitializedException
+        assertThrows(MondeNonCreeException.class, () -> p.getPaths());
+    }
+
 }
 
