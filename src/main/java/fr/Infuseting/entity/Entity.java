@@ -51,6 +51,9 @@ public abstract class Entity {
         this.effects = effects;
     }
 
+    public void addEffects(Spell spell){
+        effects.add(spell);
+    }
     public  void attack(Entity other){
         int degatMin = 1;
         if(attack == 0){

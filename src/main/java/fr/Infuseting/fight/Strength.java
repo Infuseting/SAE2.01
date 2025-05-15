@@ -16,7 +16,7 @@ public class Strength extends Spell{
 
     @Override
     public void specificEffect(Entity entity) {
-       entity.setAttack(entity.getAttack()+amount); // Le joeur qui utilise ce sort voit son attaque augmentée
+       entity.setAttack(entity.getAttack()+amount); // Le joueur qui utilise ce sort voit son attaque augmentée
 
     }
 }
