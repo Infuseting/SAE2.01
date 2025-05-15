@@ -1,0 +1,12 @@
+package fr.Infuseting.entity;
+
+public class Player extends Entity{
+    public int currentMana;
+    public int maximumMana;
+    public List<Spell> spells;
+
+    public void castSpell(Spell spell, Entity target) {
+
+    }
+
+}
