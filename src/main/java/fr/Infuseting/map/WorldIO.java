@@ -28,14 +28,8 @@ public class WorldIO {
         if (w == null) {
             throw new NullPointerException("World is null");
         }
-        File worldFolder = PATH.toAbsolutePath().resolve("world").toFile();
-        if (!worldFolder.exists()) {
-            boolean created = worldFolder.mkdirs();
-            if (!created) {
-                throw new ErrorWhileSavingWorld("Failed to create the world folder.");
-            }
-        }
 
+        File worldFolder = PATH.toAbsolutePath().resolve("world").toFile();
         File file = worldFolder.toPath().resolve(f.getName()).toFile();
         if (!file.exists()) {
             try {
@@ -111,6 +105,13 @@ public class WorldIO {
             }
         } else {
             throw new ErrorWhileSavingWorld("Unsupported operating system: " + os);
+        }
+        File worldFolder = Path.of(localAppData, "Adventure&Monster", "world").toAbsolutePath().toFile();
+        if (!worldFolder.exists()) {
+            boolean created = worldFolder.mkdirs();
+            if (!created) {
+                throw new ErrorWhileSavingWorld("Failed to create the world folder.");
+            }
         }
         return Path.of(localAppData, "Adventure&Monster");
     }
